@@ -75,4 +75,4 @@ The recipe to enable and manage LogDNA Agent Service on `rpm` or `yum` based sys
 ## License and Authors
 
 * Author: [Samir Musali](https://github.com/ldsamir), LogDNA
-* License: [GNU General Public License v3.0](https://github.com/answerbook/chef-logdna/blob/master/LICENSE)
+* License: MIT
