@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+      - run:
+          name: Install ChefDK
+          command: |
+            CHANNEL=stable
+            VERSION=2.4.17
+            sudo apt-get update -y
+            sudo apt-get install -y wget ssh rsync apt-transport-https ca-certificates curl software-properties-common rake
+            sudo wget --content-disposition "http://packages.chef.io/files/${CHANNEL}/chefdk/${VERSION}/ubuntu/14.04/chefdk_${VERSION}-1_amd64.deb" -O /tmp/chefdk.deb
+            sudo dpkg -i /tmp/chefdk.deb
+            sudo apt-get clean
+      - run:
+          name: Install RubyGems
+          command: chef gem install kitchen-docker docker kitchen-dokken kitchen-vagrant kitchen-inspec serverspec
+      - run:
+          name: BerkShelf Install
+          command: chef exec berks install
+      - run:
+          name: CookStyle
+          command: chef exec cookstyle
+      - run:
+          name: FoodCritic
+          command: chef exec foodcritic . -X spec -f any
+      - run:
+          name: ChefSpec
+          command: sudo chef exec rspec -P spec/**/*_spec.rb --tty --color
+      - run:
+          name: Test-Kitchen
+          command: |
+            chef exec kitchen test --concurrency 4 --parallel
