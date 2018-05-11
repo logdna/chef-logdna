@@ -7,8 +7,8 @@ version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 license 'MIT'
 
-issues_url 'https://github.com/answerbook/chef-logdna/issues'
-source_url 'https://github.com/answerbook/chef-logdna'
+issues_url 'https://github.com/logdna/chef-logdna/issues'
+source_url 'https://github.com/logdna/chef-logdna'
 
 supports 'ubuntu'
 supports 'centos'
