@@ -72,6 +72,10 @@ The recipe to enable and manage LogDNA Agent Service on `deb` or `apt` based sys
 
 The recipe to enable and manage LogDNA Agent Service on `rpm` or `yum` based systems.
 
+## Contributing
+
+Contributions are always welcome. See the [contributing guide](https://github.com/logdna/chef-logdna/blob/master/CONTRIBUTING.md) to learn how you can help.
+
 ## License and Authors
 
 * Author: [Samir Musali](https://github.com/ldsamir), LogDNA
