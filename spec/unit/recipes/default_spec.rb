@@ -6,7 +6,6 @@ describe 'chef-logdna::default' do
     { platform: 'ubuntu', version: '16.04', name: 'Xenial' },
     { platform: 'centos', version: '6.8', name: 'CentOS 6' },
     { platform: 'centos', version: '7.4.1708', name: 'CentOS 7' },
-    { platform: 'debian', version: '8.10', name: 'Jessie' },
   ]
   platforms.each do |platform|
     platform_name = platform[:name]
