@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'chef-logdna::default' do
+describe 'logdna::default' do
   platforms = [
     { platform: 'ubuntu', version: '14.04', name: 'Trusty' },
     { platform: 'ubuntu', version: '16.04', name: 'Xenial' },

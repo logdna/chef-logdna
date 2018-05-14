@@ -55,7 +55,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef-logdna::default]
+      - recipe[logdna::default]
     attributes:
       logdna:
         conf_key: 0123456789abcdef0123456789

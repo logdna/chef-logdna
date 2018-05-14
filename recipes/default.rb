@@ -9,9 +9,9 @@ if node['logdna']['agent_install']
   begin
     case node['platform']
     when 'debian', 'ubuntu', 'linuxmint'
-      include_recipe 'chef-logdna::install_debian'
+      include_recipe 'logdna::install_debian'
     when 'redhat', 'centos', 'amazon'
-      include_recipe 'chef-logdna::install_redhat'
+      include_recipe 'logdna::install_redhat'
     else
       raise 'Unsupported platform: #{node["platform"]}!'
     end
@@ -24,7 +24,7 @@ end
 if node['logdna']['agent_configure']
   ## Configuring LogDNA Agent:
   begin
-    include_recipe 'chef-logdna::configure'
+    include_recipe 'logdna::configure'
     Chef::Log.info('Successfully configured LogDNA Agent!')
   rescue StandardError => e
     Chef::Log.error(e.message)
@@ -36,9 +36,9 @@ if node['logdna']['conf_key'] || node['logdna']['agent_service'] == :stop
   begin
     case node['platform']
     when 'debian', 'ubuntu', 'linuxmint'
-      include_recipe 'chef-logdna::service_debian'
+      include_recipe 'logdna::service_debian'
     when 'redhat', 'centos', 'amazon'
-      include_recipe 'chef-logdna::service_redhat'
+      include_recipe 'logdna::service_redhat'
     else
       raise 'Unsupported platform: #{node["platform"]}!'
     end
