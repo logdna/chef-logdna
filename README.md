@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/logdna/chef-logdna.svg?style=svg)](https://circleci.com/gh/logdna/chef-logdna)
+
 # Deploy LogDNA Agent with Chef
 
 ## Description
