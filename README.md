@@ -8,16 +8,13 @@ Chef Cookbook to install and configure LogDNA Agent
 
 ## Requirements
 
-Chef 12.1+
+Chef Workstation 21+
 
 ## Platforms Tested
 
-* CentOS 6
 * CentOS 7
-* Ubuntu 12.04 - Precise
-* Ubuntu 14.04 - Trusty
-* Ubuntu 16.04 - Xenial
-* Ubuntu 17.10 - Artful
+* Ubuntu 18.04
+* Ubuntu 20.04
 
 ## Attributes
 
@@ -74,6 +71,14 @@ The recipe to enable and manage LogDNA Agent Service on `deb` or `apt` based sys
 
 The recipe to enable and manage LogDNA Agent Service on `rpm` or `yum` based systems.
 
+## Testing
+
+You can utilize Test Kitchen to test the instances listed above. Test Kitchen is configured to use VirtualBox w/ Vagrant. You can also put your LogDNA key in the kitchen.yml file under `conf_key` value if you want to fully test.
+
+For example to test CentOS 7 you can do the following:
+$ kitchen converge centos-7
+$ kitchen login default-centos-7 # This will connect you to the box so you can verify the cookbooks converged correctly.
+
 ## Contributing
 
 Contributions are always welcome. See the [contributing guide](https://github.com/logdna/chef-logdna/blob/master/CONTRIBUTING.md) to learn how you can help.
@@ -81,4 +86,5 @@ Contributions are always welcome. See the [contributing guide](https://github.co
 ## License and Authors
 
 * Author: [Samir Musali](https://github.com/ldsamir), LogDNA
+* Maintainer: [Scott Gallagher] scott@logdna.com, LogDNA
 * License: MIT
