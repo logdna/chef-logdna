@@ -77,7 +77,7 @@ You can utilize Test Kitchen to test the instances listed above. Test Kitchen is
 
 For example to test CentOS 7 you can do the following:
 $ kitchen converge centos-7
-$ kitchen login default-centos-7 # This will connect you to the box so you can verify the cookbooks converged correctly.
+$ kitchen verify centos-7 #Will run an Inspec test to ensure the cookbook applied correctly. 
 
 ## Contributing
 
