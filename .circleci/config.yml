@@ -2,16 +2,17 @@ version: 2
 jobs:
   build:
     machine: true
+    images: ubuntu-1604:202007-01
     steps:
       - checkout
       - run:
           name: Install ChefDK
           command: |
             CHANNEL=stable
-            VERSION=2.4.17
+            VERSION=4.13.3
             sudo apt-get update -y
             sudo apt-get install -y wget ssh rsync apt-transport-https ca-certificates curl software-properties-common rake ruby-full
-            sudo wget --content-disposition "http://packages.chef.io/files/${CHANNEL}/chefdk/${VERSION}/ubuntu/14.04/chefdk_${VERSION}-1_amd64.deb" -O /tmp/chefdk.deb
+            sudo wget --content-disposition "http://packages.chef.io/files/${CHANNEL}/chefdk/${VERSION}/ubuntu/16.04/chefdk_${VERSION}-1_amd64.deb" -O /tmp/chefdk.deb
             sudo dpkg -i /tmp/chefdk.deb
             sudo apt-get clean
       - run: 
