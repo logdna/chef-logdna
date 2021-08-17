@@ -22,18 +22,6 @@ jobs:
           name: Install RubyGems
           command: chef gem install kitchen-vagrant kitchen-inspec
       - run:
-          name: BerkShelf Install
-          command: chef exec berks install
-      - run:
-          name: CookStyle
-          command: chef exec cookstyle
-      - run:
-          name: FoodCritic
-          command: chef exec foodcritic . -X spec -f any
-      - run:
-          name: ChefSpec
-          command: sudo chef exec rspec -P spec/**/*_spec.rb --tty --color
-      - run:
           name: Test-Kitchen
           command: |
             chef exec kitchen test --concurrency 4 --parallel
