@@ -17,10 +17,10 @@ jobs:
             sudo apt-get clean
       - run: 
           name: Accept Chef License
-          command: export CHEF_LICENSE="accept"
+          command: chef generate --chef-license='accept'
       - run:
           name: Install RubyGems
-          command: chef gem install kitchen-docker docker kitchen-dokken kitchen-vagrant kitchen-inspec serverspec
+          command: chef gem install kitchen-vagrant kitchen-inspec
       - run:
           name: BerkShelf Install
           command: chef exec berks install
